@@ -3,7 +3,7 @@ A digital framework using drones, GIS, and AI to modernize Chakbandi — land co
 
 <pre>
   Centuries of inheritance have splintered hill farms into pieces too small to farm efficiently.
-Chakbandi reorganizes scattered plots into contiguous, workable holdings — but doing it by hand, on Himalayan terrain, has historically taken the better part of a decade per village.
+Chakbandi reorganizes scattered plots into contiguous, workable holdings, but doing it by hand, on Himalayan terrain, has historically taken the better part of a decade per village.
 </pre>
 
 <pre>
