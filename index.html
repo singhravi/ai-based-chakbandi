@@ -163,8 +163,8 @@ section{
 #hero .stat-row .stat-num{font-family:'Fraunces',serif; font-size:2.1rem; color:var(--amber); font-weight:600;}
 #hero .stat-row .stat-label{font-size:11.5px; color:#9CC2AB; margin-top:2px; max-width:110px; line-height:1.3;}
 .scroll-cue{
-  position:absolute; bottom:36px; left:8vw; display:flex; align-items:center; gap:10px;
-  font-family:'JetBrains Mono',monospace; font-size:11px; color:#9CC2AB; z-index:3;
+  display:flex; align-items:center; gap:10px; margin-top:48px;
+  font-family:'JetBrains Mono',monospace; font-size:11px; color:#9CC2AB;
 }
 .scroll-cue .line{width:1px;height:34px;background:linear-gradient(to bottom, var(--amber), transparent); animation:scrollpulse 1.8s infinite ease-in-out;}
 @keyframes scrollpulse{0%,100%{opacity:.3;}50%{opacity:1;}}
@@ -237,6 +237,44 @@ section{
   color:var(--amber-soft); letter-spacing:.04em;
 }
 @media (max-width:860px){.pillars{grid-template-columns:1fr;}}
+
+/* ───────── OFFICERS SECTION ───────── */
+#officers{background:var(--cream-dim);}
+.officer-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-bottom:10px;}
+.officer-card{
+  background:var(--cream); border-radius:18px; overflow:hidden;
+  border:1px solid var(--line); box-shadow:0 4px 18px rgba(18,39,26,0.07);
+  transition:transform .35s cubic-bezier(.16,1,.3,1);
+}
+.officer-card:hover{transform:translateY(-4px);}
+.ocard-head{
+  display:flex; align-items:center; gap:14px;
+  padding:20px 24px; background:var(--forest); border-bottom:2px solid var(--amber);
+}
+.ocard-icon{width:32px; height:32px; flex-shrink:0;}
+.ocard-icon svg{width:32px; height:32px; display:block;}
+.ocard-role{font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--cream);}
+.ocard-sub{font-family:'JetBrains Mono',monospace; font-size:10px; color:#9CC2AB; margin-top:3px; letter-spacing:.03em;}
+.ocard-body{padding:20px 24px; display:flex; flex-direction:column; gap:14px;}
+.ocard-before{
+  font-size:12.5px; color:var(--muted); line-height:1.55;
+  padding:12px 14px; background:#f0ede6; border-radius:8px; border-left:3px solid #c9b98a;
+}
+.ob-label{display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.1em; color:#9a8660; margin-bottom:5px; font-weight:700;}
+.ocard-after{font-size:13px; color:var(--ink); line-height:1.5;}
+.oa-label{display:block; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.1em; color:var(--green-mid); margin-bottom:8px; font-weight:700;}
+.ocard-after ul{list-style:none; display:flex; flex-direction:column; gap:9px; padding:0;}
+.ocard-after li{display:flex; gap:10px; font-size:12.5px; line-height:1.45;}
+.ocard-after li::before{content:'✦'; color:var(--amber); flex-shrink:0; font-size:10px; margin-top:3px;}
+
+.cross-benefits{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:10px;}
+.cb-item{background:var(--forest); border-radius:14px; padding:24px 20px;}
+.cb-num{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--amber); margin-bottom:10px; font-weight:700;}
+.cb-head{font-family:'Fraunces',serif; font-size:1.05rem; color:var(--cream); font-weight:600; margin-bottom:10px;}
+.cb-body{font-size:12px; color:#9CC2AB; line-height:1.55;}
+
+@media (max-width:900px){.officer-grid{grid-template-columns:1fr;} .cross-benefits{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.cross-benefits{grid-template-columns:1fr;}}
 
 /* ───────── PHASES (interactive tabs) ───────── */
 #phases{background:var(--cream);}
@@ -389,6 +427,7 @@ footer{text-align:center; padding:36px 0 10px; font-size:11.5px; color:var(--mut
   <div class="rail-tab" data-target="hero"><span class="rail-dot"></span>Intro</div>
   <div class="rail-tab" data-target="intro"><span class="rail-dot"></span>What is Chakbandi</div>
   <div class="rail-tab" data-target="framework"><span class="rail-dot"></span>Framework</div>
+  <div class="rail-tab" data-target="officers"><span class="rail-dot"></span>Officers</div>
   <div class="rail-tab" data-target="phases"><span class="rail-dot"></span>Four Phases</div>
   <div class="rail-tab" data-target="people"><span class="rail-dot"></span>Farmer Engagement</div>
   <div class="rail-tab" data-target="roadmap"><span class="rail-dot"></span>Roadmap</div>
@@ -414,6 +453,7 @@ footer{text-align:center; padding:36px 0 10px; font-size:11.5px; color:var(--mut
         <div><div class="stat-num">8→2</div><div class="stat-label">years per village, survey to settlement</div></div>
         <div><div class="stat-num">75%</div><div class="stat-label">cut in survey time using drones</div></div>
       </div>
+      <div class="scroll-cue"><div class="line"></div>SCROLL TO EXPLORE</div>
     </div>
     <div class="hero-visual">
       <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" id="heroSvg">
@@ -507,6 +547,129 @@ footer{text-align:center; padding:36px 0 10px; font-size:11.5px; color:var(--mut
       </div>
     </div>
     <div class="flow-caption reveal reveal-delay-3">DRONE DATA → GIS RECORDS → AI-OPTIMIZED PLAN → EQUITABLE, DISPUTE-FREE CHAKBANDI</div>
+  </div>
+</section>
+
+<!-- ════════════ OFFICERS SUPPORT ════════════ -->
+<section id="officers">
+  <div class="section-inner">
+    <div class="eyebrow">FOR FIELD OFFICERS</div>
+    <h2 class="reveal">How technology empowers the officers who run chakbandi.</h2>
+    <p class="lede reveal reveal-delay-1">Chakbandi Adhikaris, Revenue Officers, Patwaris, and Lekhpals carry the real burden of consolidation. Here is exactly what changes for them — and how the workload gets lighter, faster, and more defensible.</p>
+
+    <!-- Officer roles -->
+    <div class="officer-grid reveal reveal-delay-2">
+
+      <div class="officer-card">
+        <div class="ocard-head">
+          <div class="ocard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8C969" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><rect x="3" y="6" width="18" height="16" rx="2"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="13" y2="15"/></svg></div>
+          <div>
+            <div class="ocard-role">Chakbandi Adhikari</div>
+            <div class="ocard-sub">Settlement Officer / District Lead</div>
+          </div>
+        </div>
+        <div class="ocard-body">
+          <div class="ocard-before"><span class="ob-label">BEFORE</span>Manual plan preparation taking months; no defensible audit trail; boundary disputes escalating to courts.</div>
+          <div class="ocard-after"><span class="oa-label">WITH TECH</span>
+            <ul>
+              <li>AI generates multiple consolidation plan variants in hours — officer reviews and approves, not creates from scratch</li>
+              <li>Every parcel swap recorded with land-quality rationale — fully auditable, court-admissible</li>
+              <li>GIS dashboard shows real-time village-wise progress across the entire district</li>
+              <li>Dispute prediction flags risky swaps before they become formal objections</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="officer-card">
+        <div class="ocard-head">
+          <div class="ocard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8C969" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+          <div>
+            <div class="ocard-role">Revenue Officer / Tehsildar</div>
+            <div class="ocard-sub">Supervisory & Legal Authority</div>
+          </div>
+        </div>
+        <div class="ocard-body">
+          <div class="ocard-before"><span class="ob-label">BEFORE</span>Objections filed on paper; long queues at tehsil; no visibility into which villages are stuck or why.</div>
+          <div class="ocard-after"><span class="oa-label">WITH TECH</span>
+            <ul>
+              <li>Digital objection portal auto-classifies and routes complaints to the correct officer</li>
+              <li>Resolution timelines tracked and visible — no case falls through the cracks</li>
+              <li>Remote consent from migrant landowners removes the biggest cause of stalled villages</li>
+              <li>Sub-district summary reports generated automatically for senior review</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="officer-card">
+        <div class="ocard-head">
+          <div class="ocard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8C969" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3H3a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><line x1="7" y1="7" x2="7" y2="9"/><line x1="11" y1="7" x2="11" y2="9"/><line x1="15" y1="7" x2="15" y2="9"/><path d="M3 13h18v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6z"/></svg></div>
+          <div>
+            <div class="ocard-role">Patwari / Lekhpal</div>
+            <div class="ocard-sub">Ground Survey & Record Entry</div>
+          </div>
+        </div>
+        <div class="ocard-body">
+          <div class="ocard-before"><span class="ob-label">BEFORE</span>Manual field surveys on steep terrain; risk of surveying errors; weeks per village; data entry into physical registers prone to mistakes.</div>
+          <div class="ocard-after"><span class="oa-label">WITH TECH</span>
+            <ul>
+              <li>Drone does the heavy lifting — Patwari verifies rather than measures from scratch</li>
+              <li>Drone orthophotos auto-match to existing khasra numbers; mismatches flagged automatically</li>
+              <li>Mobile field app works offline — field corrections sync when connectivity returns</li>
+              <li>ULPIN auto-generated — no manual record numbering or duplication risk</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="officer-card">
+        <div class="ocard-head">
+          <div class="ocard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8C969" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="1"/><polyline points="16 2 12 7 8 2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg></div>
+          <div>
+            <div class="ocard-role">District Magistrate / Collector</div>
+            <div class="ocard-sub">Executive Authority & Oversight</div>
+          </div>
+        </div>
+        <div class="ocard-body">
+          <div class="ocard-before"><span class="ob-label">BEFORE</span>No real-time visibility into chakbandi progress; status known only through periodic written reports; political disputes hard to mediate without objective data.</div>
+          <div class="ocard-after"><span class="oa-label">WITH TECH</span>
+            <ul>
+              <li>Live district dashboard — see every village's phase, disputes pending, and completion %</li>
+              <li>Land-quality scores provide objective, data-backed ground for dispute resolution</li>
+              <li>Early-warning alerts for villages at risk of falling behind schedule</li>
+              <li>Policy compliance reports auto-generated for state monitoring committee</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Cross-cutting benefits row -->
+    <div class="eyebrow reveal" style="margin-top:56px;">ACROSS ALL OFFICERS</div>
+    <div class="cross-benefits reveal reveal-delay-1">
+      <div class="cb-item">
+        <div class="cb-num">01</div>
+        <div class="cb-head">Legal Defensibility</div>
+        <div class="cb-body">Every decision — parcel swap, valuation, boundary — is recorded with timestamp, data source, and officer ID. No more verbal agreements that become disputed later.</div>
+      </div>
+      <div class="cb-item">
+        <div class="cb-num">02</div>
+        <div class="cb-head">Reduced Corruption Risk</div>
+        <div class="cb-body">Transparent, algorithmic land-value scoring removes the scope for subjective manipulation of which farmer gets which plot.</div>
+      </div>
+      <div class="cb-item">
+        <div class="cb-num">03</div>
+        <div class="cb-head">Less Travel to Remote Villages</div>
+        <div class="cb-body">Drone surveys, digital field verification, and remote farmer consent cut the number of physical site visits an officer must make to inaccessible hill villages.</div>
+      </div>
+      <div class="cb-item">
+        <div class="cb-num">04</div>
+        <div class="cb-head">Performance Tracking</div>
+        <div class="cb-body">Officers' village-wise completion rates are visible to the district committee — creating a fair, data-driven basis for recognition and accountability.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -871,7 +1034,8 @@ onScroll();
 
 railDots.forEach(d=>{
   d.addEventListener('click', ()=>{
-    document.getElementById(d.dataset.target).scrollIntoView({behavior:'smooth'});
+    const target = document.getElementById(d.dataset.target);
+    if(target) target.scrollIntoView({behavior:'smooth'});
   });
 });
 
